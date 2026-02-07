@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff5f9e, #ffc371);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    position: relative;
+}
+
+h1 {
+    color: #ff3366;
+}
+
+h2 {
+    color: #ff6699;
+    margin: 15px 0 25px;
+}
+
+/* BUTTONS */
+.btn-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 15px 35px;
+    font-size: 18px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+#yes {
+    background: #ff3366;
+    color: white;
+    animation: pulse 1.5s infinite;
+}
+
+#no {
+    background: #bbb;
+    color: white;
+    position: relative; /* start centered */
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,51,102,.7); }
+    70% { box-shadow: 0 0 0 25px rgba(255,51,102,0); }
+}
+
+#taunt {
+    margin-top: 15px;
+    color: #777;
+    font-size: 16px;
+}
+
+#msg {
+    display: none;
+    margin-top: 25px;
+    font-size: 26px;
+    color: #ff3366;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.8);
+    color: white;
+    text-align: center;
+    padding: 50px;
+    font-size: 22px;
+}
+
+#hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 24px;
+    animation: floatUp linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh) scale(1.6);
+        opacity: 0;
+    }
+}
